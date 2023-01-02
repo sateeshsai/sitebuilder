@@ -20,6 +20,7 @@
   let elementsStateObject = {};
 
   $: if ($elementsArrayStore) {
+    console.log($elementsArrayStore)
     for (const el of elementsData) {
       elementsStateObject[el.Id] = {};
     }
@@ -39,6 +40,7 @@
       $activeElementStore = undefined;
     } else {
       elementData.text = e.target.textContent;
+      console.log(elementData.text)
     }
 
     localStorage.setItem("elementsStore", JSON.stringify($elementsArrayStore));
@@ -194,6 +196,7 @@
         {#if elementChildren.length === 0}
           {@html elementData.text}
         {:else}
+        {console.log("else")}
           <svelte:self elementsData={elementChildren} />
         {/if}
         <!--  -->

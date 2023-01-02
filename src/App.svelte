@@ -2,12 +2,16 @@
   import { onMount } from "svelte";
   let themeDataset = document.documentElement.dataset;
   import { slide } from "svelte/transition";
+  import Recursive from "./Recursive.svelte";
   $: console.log(themeDataset);
   let openModal = false;
 import Test from "./Test.svelte";
   
 </script>
+<!-- <Recursive />  -->
+
 <Test/>
+
 
 <div class="container">
   <nav>
